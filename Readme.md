@@ -1,5 +1,6 @@
 # Chaos Testing with Mesh and Cubernetes
 https://github.com/dhomi/qa-training_chaos-mesh
+optioneel: https://docs.litmuschaos.io/docs/getting-started/installation
 
 ## installation
 install docker
@@ -7,15 +8,19 @@ install kubernetes (voor mac os de minicube op https://minikube.sigs.k8s.io/docs
 install helm https://helm.sh/docs/intro/install/
 install chaos mesh https://chaos-mesh.org/docs/simulate-pod-chaos-on-kubernetes/
 
-## run in mac os
+
+## run
+docker service moet runnen
 minikube start
+
+## stop
+minikube stop
 
 ### to enable the dashboard
 helm upgrade chaos-mesh chaos-mesh/chaos-mesh --namespace=chaos-testing --version v0.5.4 --set dashboard.securityMode=false
 kubectl port-forward -n chaos-mesh svc/chaos-dashboard 2333:2333
 
 dashboard is dus hier te zien: http://127.0.0.1:2333/
-
 
 ## create a helm pod with ngnix
 (read: https://scribe.rip/@muppedaanvesh/deploying-nginx-on-kubernetes-a-quick-guide-04d533414967?)
