@@ -12,6 +12,11 @@ install chaos mesh https://chaos-mesh.org/docs/simulate-pod-chaos-on-kubernetes/
 ## run
 docker service moet runnen
 minikube start
+cd apps
+./index.sh
+minikube service posts-srv --url 
+onthoud de poort die hier wordt meegegeven
+curl http://127.0.0.1:poort/posts/get-posts
 
 ## stop
 minikube stop
